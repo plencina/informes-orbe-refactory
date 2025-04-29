@@ -9,13 +9,16 @@ export default function Report ({ report }:{ report: ReportInterface }) {
     const { set_viewer } = StoreAdmin()
 
     const edit_report = () => {
-        report.parrafos = (report.parrafos as string[]).join('\n')
+        report.paragraphs = (report.paragraphs as string[]).join('\n') 
         set_full(report)
         set_viewer("update")
     }
     const delete_report = async () => {
         try {
             const response = await fetch(`api/delete?id=${report._id}`, {
+                headers: new Headers({
+                    'Authorization': localStorage.getItem('jwt') || ''
+                }),
                 method:"DELETE"
             })
             const result = await response.json()
@@ -34,7 +37,7 @@ export default function Report ({ report }:{ report: ReportInterface }) {
     }
 
     return <fieldset className={styles.report}>
-        <p>{report.titulo}</p>
+        <p>{report.title}</p>
         <span>
         <button onClick={edit_report}>Editar</button>
         <button onClick={delete_report}>Eliminar</button>

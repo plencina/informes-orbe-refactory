@@ -2,14 +2,14 @@
 import StoreConstructor from "@/app/stores/constructor"
 
 export default function Title () {
-    const { _id, set_id } = StoreConstructor()
+    const { title, set_title } = StoreConstructor()
 
     return <fieldset>
-    <legend>id</legend>
+    <legend>Título</legend>
     <input 
     type="text"
-    value={_id}
-    onChange={(e)=>{set_id(e.target.value)}}
+    value={title}
+    onChange={(e)=>{set_title(e.target.value)}}
     />
 </fieldset>
 }

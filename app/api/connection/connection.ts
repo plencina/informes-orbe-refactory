@@ -17,7 +17,7 @@ async function connect () : Promise<mongoose.Mongoose> {
     const MONGODB_URI: string|null = process.env.MONGODB_URI || null
 
     if (!MONGODB_URI) {
-        throw new Error(`Error: obteniendo URI de MDB, URI: ${MONGODB_URI} (variable de entorno), componente: api/connection`)
+        throw new Error(`Error: obteniendo ENV URI DATABASE, componente: api/connection`)
     }
     connection.promise = mongoose.connect(MONGODB_URI, { bufferCommands: false })
                         .then(mongodb => mongodb)

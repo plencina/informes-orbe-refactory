@@ -6,16 +6,16 @@ export default function Upload () {
     const { get_full } = StoreConstructor()
 
     const upload = async () => {
-        const token: string = localStorage.getItem("jwt") || ''
+        
         try {
             const report = get_full()
             console.log("Report a subir:", report)
-
+            
             const response = await fetch("api/create", {
                 headers: new Headers({
-                    "Authorization": token
+                    "Authorization": localStorage.getItem("jwt") || ''
                 }),
-                method: "post",
+                method: "POST",
                 body: JSON.stringify(report)
             })
             const result = await response.json()

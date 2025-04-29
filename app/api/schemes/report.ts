@@ -2,11 +2,11 @@ import mongoose from "mongoose"
 import ReportInterface from "@/app/interfaces/report"
 
 const Report_scheme = new mongoose.Schema<ReportInterface>({
-    titulo: String,
-    imagen: String,
-    parrafos: Array,
-    hora_subida: Number,
-    genero: String
+    title: String,
+    image: Object,
+    paragraphs: Array,
+    time: Number,
+    genre: Number
 },
 {
     versionKey: false

@@ -1,8 +1,12 @@
 export default interface ReportInterface {
     _id?: string
-    titulo: string
-    imagen: string
-    parrafos: string|string[]
-    hora_subida: number
-    genero: string
+    title: string
+    image: {
+        id: string,
+        image: string,
+        thumb: string
+    }
+    paragraphs: string|string[]
+    time: number
+    genre: number
 }

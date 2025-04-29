@@ -9,12 +9,13 @@ export async function GET (request: NextRequest) {
         if (!page) throw new Error('Error: query parameter page inválido')
         let skip: number = (Number(page) - 1) * 40
 
-        await ConnectDB() 
+        await ConnectDB()
         const result = await ReportModel.find()
-        .sort({ hora_subida: - 1 })
+        .sort({ time: - 1 })
         .skip(skip)
         .limit(40)
         .lean()
+        
         return NextResponse.json({ success: true, result })
     
     } catch (error) {
@@ -22,4 +23,4 @@ export async function GET (request: NextRequest) {
         console.log(error)
         return NextResponse.json({ success: false, error })
     }
-} 
+}

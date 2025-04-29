@@ -2,6 +2,7 @@
 import styles from "@/app/(admin)/styles/constructor.module.css"
 import StoreConstructor from "@/app/stores/constructor"
 
+import Id from "@/app/(admin)/components/constructor/components/id"
 import Title from "@/app/(admin)/components/constructor/components/title"
 import Paragraphs from "@/app/(admin)/components/constructor/components/paragraphs"
 import Timestamp from "@/app/(admin)/components/constructor/components/timestamp"
@@ -13,7 +14,7 @@ export default function Constructor () {
 
     return <section className={styles.main}>
         <span className={styles.title}><p>CONSTRUCTOR</p><button onClick={reset}>Reset</button></span>
-        
+        <Id />
         <Title />
         <Image />
         <Paragraphs />

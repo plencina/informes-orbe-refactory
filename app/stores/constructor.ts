@@ -1,36 +1,45 @@
 import { create } from "zustand";
 import TypeConstructor from "@/app/interfaces/constructor"
 
+const store_initial_state = {
+    _id: '',
+    title: '',
+    image: {
+        id: '',
+        image: '',
+        thumb: ''
+    }, 
+    paragraphs: '',
+    time: 0,
+    genre: 0,
+}
 const Constructor = create<TypeConstructor>((set,get) => ({
     _id: '',
-    titulo: '',
-    imagen: '',
-    parrafos: '',
-    hora_subida: 0,
-    genero: '',
+    title: '',
+    image: {
+        id: '',
+        image: '',
+        thumb: ''
+    }, 
+    paragraphs: '',
+    time: 0,
+    genre: 0,
     set_id: (id) => set({ _id: id }),
-    set_titulo: (titulo) => set({ titulo }),
-    set_imagen: (imagen) => set({ imagen}),
-    set_parrafos: (texto) => set({ parrafos: texto }),
-    set_hora_subida: (hora) => set({ hora_subida: hora }),
-    set_genero: (genero) => set({ genero }),
+    set_title: (title) => set({ title }),
+    set_image: (image) => set({ image }),
+    set_paragraphs: (text) => set({ paragraphs: text }),
+    set_time: (time) => set({ time }),
+    set_genre: (genre) => set({ genre }),
     get_full: () => ({
         _id: get()._id,
-        titulo: get().titulo,
-        imagen: get().imagen,
-        parrafos: (get().parrafos as string).split('\n'),
-        hora_subida: get().hora_subida || Date.now(),
-        genero: get().genero
+        title: get().title,
+        image: get().image,
+        paragraphs: (get().paragraphs as string).split('\n'),
+        time: get().time || Date.now(),
+        genre: get().genre
     }),
     set_full: (report) => set(report),
-    reset: () => set({
-        _id: '',
-        titulo: '',
-        imagen: '',
-        parrafos: '',
-        hora_subida: 0,
-        genero: '',
-    })
+    reset: () => set(store_initial_state)
 }))
 
 export default Constructor
