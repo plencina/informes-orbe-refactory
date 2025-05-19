@@ -5,6 +5,7 @@ import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
 import StoreClient from "@/app/stores/client";
 import ReportInterface from "@/app/interfaces/report";
+import Header from "@/app/(client)/header/header";
 
 
 export default function Dynamic_route () {
@@ -32,6 +33,7 @@ export default function Dynamic_route () {
 
   return <main className={styles.main}>
     <section className={styles.report}>
+      <Header />
       <h1>{report?.title}</h1>
       <figure>
         <img
