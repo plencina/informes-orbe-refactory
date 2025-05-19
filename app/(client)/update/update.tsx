@@ -1,17 +1,18 @@
 "use client"
-import { Client } from "@/app/stores/client"
+import StoreClient from "@/app/stores/client"
 import { useEffect } from "react"
 
 export default function Update () {
-    const { querys, set_querys, set_news } = Client()
+    const { request, inc_request, set_reports, reports } = StoreClient()
 
     const update_news = async () => {
         try {
-            const response = await fetch(`api/crud/read?page=${querys}`)
+            const response = await fetch(`api/read?page=${request}`)
             const result = await response.json()
             if (result.success) {
-                set_querys(querys + 1)
-                console.log(result)
+                inc_request()
+                set_reports(result.data)
+                console.log(result.data)
             }
             if (result.error) {
                 console.log("Error:")
@@ -22,8 +23,8 @@ export default function Update () {
         }
     }
     useEffect(()=>{
-        update_news()
-    }, [])
+        if (!reports.length) update_news()
+    }, []) 
 
-    return <button onClick={update_news}>Más noticias</button>
+    return <button onClick={update_news}>Cargar más noticias</button>
 }

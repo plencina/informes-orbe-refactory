@@ -1,0 +1,16 @@
+.main {
+    width: 100%;
+    max-height: 5rem;   
+    padding: 0;
+    margin: 0;
+}
+.main img {
+    height: 100%;
+    width: 100%;
+    object-fit: scale-down;
+}
+@media (max-width: 750px) {
+    .main img {
+        object-fit: cover;
+    }
+}

@@ -1,11 +1,13 @@
 import { create } from "zustand"
 import TypeClient from "@/app/interfaces/client"
 
-export const Client = create<TypeClient>((set) => ({
+const StoreClient = create<TypeClient>((set) => ({
     uuid: '',
-    querys: 1,
-    news: [],
+    request: 1,
+    reports: [],
     set_uuid: (uuid) => set({ uuid: uuid }),
-    set_querys: (number) => set({ querys: number}),
-    set_news: (news) => set((state)=>({ news: [...state.news, ...news] }))
-}))
+    inc_request: () => set((state)=>({ request: state.request + 1 })),
+    set_reports: (news) => set((state)=>({ reports: [...state.reports, ...news] }))
+})) 
+
+export default StoreClient

@@ -8,12 +8,12 @@ export default function Recycle () {
 
     const download = async () => {
         try {
-            const token: string = sessionStorage.getItem('token') || ''
             const response = await fetch(`api/recycle`, {
                 headers: new Headers({
-                    "Authorization": token
+                    "Authorization": localStorage.getItem('jwt') || ''
                 })
             })
+
             const result = await response.json()
             if (result.success) {
                 add_reports(result.result)

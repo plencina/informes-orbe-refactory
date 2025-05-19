@@ -17,7 +17,7 @@ export async function POST (request: NextRequest) {
           await ConnectDB()
           const new_report = new ReportModel(body)
           const result = await new_report.save()
-          return NextResponse.json({ success: true, result })
+          return NextResponse.json({ success: true, data: result })
         
         }
         if (result.error) throw new Error('Error: jsonwebtoken inválido')

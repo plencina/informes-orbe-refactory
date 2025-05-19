@@ -22,16 +22,17 @@ export default function Report ({ report }:{ report: ReportInterface }) {
                 method:"DELETE"
             })
             const result = await response.json()
+    
             if (result.success) {
-                alert("Reporte eliminado")
-                console.log(result.result)
+                alert("Reporte eliminado con éxito")
+                console.log(result.data)
             }
             if (result.error) {
                 alert("Error en respuesta de api")
                 console.log(result.error)
-            }
+            }            
         } catch (error) {
-            alert("Error en trycatch")
+            console.log('Error en trycatch')
             console.log(error)
         }
     }

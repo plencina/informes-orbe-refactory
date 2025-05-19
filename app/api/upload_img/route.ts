@@ -25,7 +25,7 @@ export async function POST (request: NextRequest) {
               image: result.data.image.url,
               thumb: result.data.thumb.url
             }
-            return NextResponse.json({ success: true, result: parsed_to_local_scheme })
+            return NextResponse.json({ success: true, data: parsed_to_local_scheme })
           }
           if (result.error) {
             throw new Error(result.error) 

@@ -5,18 +5,17 @@ export default function Image () {
     const { image, set_image } = StoreConstructor()
 
     const upload_image = async (form: FormData) => {
-        const token: string = localStorage.getItem("jwt") || ''
 
         const response = await fetch('api/upload_img',{
             headers: new Headers({ 
-                "Authorization": token 
+                "Authorization": localStorage.getItem("jwt") || ''
             }),
             method: 'post',
             body: form 
         })
         const result = await response.json()
         if (result.success) {
-            set_image(result.result)
+            set_image(result.data)
         }
         if (result.error) {
             alert('Error cargando imágen')

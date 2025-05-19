@@ -12,7 +12,7 @@ export async function GET (request: NextRequest) {
 
                 await ConnectDB()
                 const result = await RecycleModel.find({})
-                .sort({ hora_subida: - 1 })
+                .sort({ time: - 1 })
                 .lean()
                 return NextResponse.json({ success: true, result })
             }
@@ -26,4 +26,4 @@ export async function GET (request: NextRequest) {
         console.log(error)
         return NextResponse.json({ success: false, error })
     }
-} 
+}

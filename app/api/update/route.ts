@@ -14,7 +14,7 @@ export async function PUT (request: NextRequest) {
           const body: ReportInterface = await request.json()
           await ConnectDB()
           const result = await ReportModel.findByIdAndUpdate(body._id, body)
-          return NextResponse.json({ success: true, result })
+          return NextResponse.json({ success: true, data: result })
         
         }
         if (result.error) throw new Error('Error: jsonwebtoken inválido')

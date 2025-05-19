@@ -3,11 +3,9 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
-    padding: 1rem;
-    gap: 1rem;
-
     background: black;
+    gap: .5rem;
+    padding-top: .5rem;
 }
 .main button {
     width: 100%;

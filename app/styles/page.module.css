@@ -1,9 +1,19 @@
 .main {
+    padding-top: 3rem;
     width: 100%;
     display: flex;
-    flex: 1;
-    justify-content: center;
-    align-items: center; 
     flex-direction: column;
 }
-
+.main button {
+    height: 2rem;
+    border: solid 1px var(--blue);
+    transition: background-color .2s ease;
+    background-color: var(--blue);
+    color: var(--white);
+    margin-bottom: .1rem;
+}
+.main button:hover {
+    cursor: pointer;
+    color: black;
+    background-color: var(--light);
+}

@@ -20,7 +20,7 @@ export async function DELETE (request: NextRequest) {
                 const recycling_report = new RecycleModel(report)
                 await recycling_report.save()
                 const result = await ReportModel.findByIdAndDelete(id)
-                return NextResponse.json({ success: true, result })
+                return NextResponse.json({ success: true, data: result })
             
             }
             if (result.error) throw new Error('Error: jsonwebtoken inválido')

@@ -1,14 +1,14 @@
 import { create } from "zustand";
 import TypeAdmin from "@/app/interfaces/admin";
 
-const Admin = create<TypeAdmin>((set)=>({
+const StoreAdmin = create<TypeAdmin>((set)=>({
     reports: [],
     viewer: 'main',
-    requests: 0,
+    request: 1,
     set_viewer: (viewer) => set({ viewer: viewer }),
     add_reports: (array) => set((state)=>({ reports: [...state.reports, ...array ]})),
-    reset: () => set({ reports: [], requests: 0 }),
-    sum_request: () => set((state) => ({ requests: state.requests + 1 })),
+    reset: () => set({ reports: [], request: 1 }),
+    inc_request: () => set((state) => ({ request: state.request + 1 })),
 }))
 
-export default Admin
+export default StoreAdmin
