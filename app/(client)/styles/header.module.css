@@ -9,6 +9,13 @@
     width: 100%;
     object-fit: scale-down;
 }
+.alert {
+    background: orangered;
+    color: white;
+    padding: .5rem 0;
+    text-align: center;
+    font-weight: bold;
+}
 @media (max-width: 750px) {
     .main img {
         object-fit: cover;
