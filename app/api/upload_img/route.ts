@@ -17,8 +17,9 @@ export async function POST (request: NextRequest) {
             method: 'post',
             body: formData
             })
-          const result = await response.json()
+          if (!response.ok) return NextResponse.json({ success: false, error: 'Error en respuesta del servidor'})
 
+          const result = await response.json()
           if (result.success) {
             const parsed_to_local_scheme = {
               id: result.data.id,
@@ -37,7 +38,7 @@ export async function POST (request: NextRequest) {
       throw new Error('Error: default')
 
     } catch (error) {
-      console.log("Error en api/crud/create:")
+      console.log("Error en api/upload_img:")
       console.log(error)
       return NextResponse.json({ succes: false, error }) 
     }
