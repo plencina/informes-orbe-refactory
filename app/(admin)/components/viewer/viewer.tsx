@@ -16,7 +16,7 @@ export default function Viewer () {
             viewer == "reports" ? <Read />      :
             viewer == "update"  ? <Update />    :
             viewer == "recycle" ? <Recycle />   :
-            <p>Dashboard</p>
+            <p>Panel de administrador</p>
         }
     </section>  
 } 

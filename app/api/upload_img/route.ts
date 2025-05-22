@@ -17,7 +17,10 @@ export async function POST (request: NextRequest) {
             method: 'post',
             body: formData
             })
-          if (!response.ok) return NextResponse.json({ success: false, error: 'Error en respuesta del servidor'})
+          if (!response.ok) {
+            console.log(response)
+            return NextResponse.json({ success: false, error: 'Error en respuesta del servidor'})
+          }
 
           const result = await response.json()
           if (result.success) {

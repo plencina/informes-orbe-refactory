@@ -1,7 +1,9 @@
 .main {
     height: 100%;
-    width: 80%;
+    width: 100%;
     padding: 1rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     flex-direction: column;
     background: #ccc;
-}  
+}

@@ -11,11 +11,9 @@ export default function Controls () {
     const view_recycle = () => {set_viewer("recycle")}
 
     return <section className={styles.main}>
-        <p>DASHBOARD</p>
-
         <button onClick={view_upload}>Agregar noticia</button>
         <button onClick={view_reports}>Noticias subidas</button>
         <button onClick={view_recycle}>Papelera de reciclaje</button>
-    
+        <p><b>dashboard</b></p>
     </section>
 }

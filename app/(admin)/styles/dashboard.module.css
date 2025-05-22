@@ -1,8 +1,9 @@
 .main {
+    min-height: 100vh;
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     background: black;
     gap: .5rem;
     padding-top: .5rem;
