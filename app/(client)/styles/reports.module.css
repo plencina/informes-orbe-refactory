@@ -15,14 +15,20 @@
 .report:hover {
     transform: scale(1.05);
 }
+.report figure {
+    width: 30%;
+    max-width: 30% !important;
+}
 .report figure img {
     height: 100%;
     width: 100%;
+    object-fit: cover;
 }
 .content {
     height: 100%;
-    width: 100%;
-    background: white;
+    width: 70%;
+    max-width: 70% !important;
+    background: var(--white);
 
     padding: .5rem;
     display: flex;
@@ -41,10 +47,10 @@
     .main {
         grid-template-columns: 1fr 1fr;
     }
-    .report:hover {
+    .report:hover { 
         transform: none;
     }
-    .report figure img {
+    .report figure {
         max-width: 35%;
     }
 }

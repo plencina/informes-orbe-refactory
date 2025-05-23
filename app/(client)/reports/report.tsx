@@ -13,7 +13,7 @@ export default function Report ({ report }:{ report: ReportInterface }) {
         </figure>
         <div className={styles.content}>
             <h3>{report.title}</h3>
-            <p className={styles.genre}>{genres[report.genre]}</p>
+            { report.genre != 0 && <p className={styles.genre}>{genres[report.genre]}</p> }
         </div>
     </article>
     </Link>

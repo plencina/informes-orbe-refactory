@@ -18,6 +18,7 @@
     align-items: center;
     text-align: center;
     font-weight: bold;
+    display: none;
 }
 @media (max-width: 750px) {
     .main img {

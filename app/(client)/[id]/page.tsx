@@ -35,17 +35,19 @@ export default function Dynamic_route () {
     <section className={styles.report}>
       <Header />
       <h1>{report?.title}</h1>
-      <figure>
+      <hr />
+      <figure> 
         <img
         src={report?.image.image}
         />
         <figcaption><i>Algunas imágenes son censuradas para proteger la identidad de las personas</i></figcaption>
       </figure>
-      <p className={styles.genre}>{report?.genre && genres[report?.genre]}</p>
+      { (report && report?.genre != 0) && <p className={styles.genre}>{genres[report.genre]}</p>}
       <div className={styles.paragraphs}>
       {
         report?.paragraphs && (report?.paragraphs as string[]).map(item => <p key={getRandomID()}>{item}</p>)
       }
+        <hr />
       </div>
     </section>
     <section className={styles.ads_one}>
