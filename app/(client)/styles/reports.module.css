@@ -39,8 +39,12 @@
 .genre {
     width: 100%;
     text-align: left;
-    border-left: solid .5rem var(--blue);
-    padding-left: .3rem;
+    border-left: solid .4rem var(--blue);
+    padding-left: .25rem;
+}
+.genre p {
+    display: flex;
+    align-items: flex-end;
 }
 
 @media (max-width: 1075px) {
