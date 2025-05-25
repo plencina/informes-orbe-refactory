@@ -10,7 +10,7 @@ export default function Reports () {
     return <section className={styles.main}>
         {
             reports.length >= 1 ?
-            reports.map(report => <Report report={report} key={report.time} />):
+            reports.map((report, index) => <Report report={report} index={index} key={report.time} />):
             <Loading />
         }
     </section>

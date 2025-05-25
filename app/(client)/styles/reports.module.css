@@ -5,12 +5,14 @@
     gap: .5rem;
     background: var(--light);
     grid-template-columns: repeat(3,1fr);
+    animation: show 1s ease;
 }
 .report {
     height: 100%;
-    display: flex;
+    display: none;
     border: solid 1px #ccc;
-    transition: transform .2s ease;
+    transition: all .2s ease;
+    animation: show 1s ease;
 }
 .report:hover {
     transform: scale(1.05);
@@ -46,7 +48,17 @@
     display: flex;
     align-items: flex-end;
 }
-
+.visible {
+    display: flex;
+}
+@keyframes show {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
 @media (max-width: 1075px) {
     .main {
         grid-template-columns: 1fr 1fr;

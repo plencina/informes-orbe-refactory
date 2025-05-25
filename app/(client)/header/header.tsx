@@ -34,4 +34,4 @@ export default function Header () {
             <p>107 Hospital</p>
         </Marquee>
     </div>
-} 
+}
