@@ -13,6 +13,7 @@
     border: solid 1px #ccc;
     transition: all .2s ease;
     animation: show 1s ease;
+    background: var(--white);
 }
 .report:hover {
     transform: scale(1.05);
@@ -38,11 +39,20 @@
     justify-content: space-around;
     align-items: flex-start;
 }
+.content h3 {
+    font-family: var(--bold);
+    font-size: 1.2rem;
+    line-height: 1.4rem;
+    letter-spacing: .045rem;
+    color: var(--blue);
+}
 .genre {
     width: 100%;
     text-align: left;
     border-left: solid .4rem var(--blue);
     padding-left: .25rem;
+    font-family: var(--regular);
+    color: var(--blue);
 }
 .genre p {
     display: flex;

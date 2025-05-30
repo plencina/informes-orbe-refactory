@@ -2,9 +2,10 @@
   --background: #ffffff;
   --foreground: #171717;
   --blue: #161b33;
+  --blue_bold: #1a1e37;
   --white: #fbfff1;
-  --light: hsla(0,0%,59%,.1);
   --light2: #F0F8FF;
+  --light: hsla(0,0%,59%,.1);
 }
 
 html,
@@ -12,7 +13,7 @@ body {
   min-height: 100vh;
   width: 100%;
   overflow-x: hidden;
-}
+} 
 
 body {
   color: black;

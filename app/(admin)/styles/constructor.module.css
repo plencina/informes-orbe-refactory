@@ -31,3 +31,8 @@
     align-items: center;
     gap: 2rem;
 }
+@media (max-width: 750px) {
+    .main fieldset:last-of-type {
+        overflow-x: scroll; 
+    }
+}

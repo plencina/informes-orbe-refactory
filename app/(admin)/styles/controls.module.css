@@ -23,3 +23,18 @@
 .main:hover {
     top: 0;
 }
+.button_sidebar {
+    position: fixed;
+    right: .5rem;
+    top: .1rem;
+    max-width: 2rem;
+    max-height: 2rem; 
+}
+@media (max-width: 750px) {
+    .main {
+        width: 100%;
+        left: 0;
+    }
+    .main:hover {
+    }
+}

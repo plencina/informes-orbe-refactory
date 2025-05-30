@@ -7,3 +7,8 @@
     flex-direction: column;
     background: #ccc;
 }
+@media (max-width: 750px) {
+    .main {
+        margin-top: 1rem;
+    }
+}
