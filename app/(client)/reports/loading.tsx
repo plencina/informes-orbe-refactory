@@ -1,7 +1,55 @@
 import styles from "@/app/(client)/styles/loading.module.css"
 
+
 export default function Loading () {
-    return <section className={styles.main}>
-        <p>Cargando noticias...</p>
-    </section>
+    return <>
+    <div className={styles.loading_report}>
+        <div className={styles.top}></div>
+        <div className={styles.bottom}></div>
+    </div>
+    <div className={styles.loading_report}>
+        <div className={styles.top}></div>
+        <div className={styles.bottom}></div>
+    </div>
+    <div className={styles.loading_report}>
+        <div className={styles.top}></div>
+        <div className={styles.bottom}></div>
+    </div>
+    <div className={styles.loading_report}>
+        <div className={styles.top}></div>
+        <div className={styles.bottom}></div>
+    </div>
+    <div className={styles.loading_report}>
+        <div className={styles.top}></div>
+        <div className={styles.bottom}></div>
+    </div>
+    <div className={styles.loading_report}>
+        <div className={styles.top}></div>
+        <div className={styles.bottom}></div>
+    </div>
+    <div className={styles.loading_report}>
+        <div className={styles.top}></div>
+        <div className={styles.bottom}></div>
+    </div>
+    <div className={styles.loading_report}>
+        <div className={styles.top}></div>
+        <div className={styles.bottom}></div>
+    </div>
+    <div className={styles.loading_report}>
+        <div className={styles.top}></div>
+        <div className={styles.bottom}></div>
+    </div>
+    <div className={styles.loading_report}>
+        <div className={styles.top}></div>
+        <div className={styles.bottom}></div>
+    </div>
+    <div className={styles.loading_report}>
+        <div className={styles.top}></div>
+        <div className={styles.bottom}></div>
+    </div>
+    <div className={styles.loading_report}>
+        <div className={styles.top}></div>
+        <div className={styles.bottom}></div>
+    </div>
+    </>
 }

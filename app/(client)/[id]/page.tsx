@@ -6,7 +6,7 @@ import { useEffect, useState } from "react";
 import StoreClient from "@/app/stores/client";
 import ReportInterface from "@/app/interfaces/report";
 import Header from "@/app/(client)/header/header";
-
+import Loading from "@/app/(client)/[id]/loading"
 
 export default function Dynamic_route () {
   const [ report, set_report ] = useState<ReportInterface>()
@@ -31,7 +31,7 @@ export default function Dynamic_route () {
     if (!result) get_report_by_request()
   },[])
 
-  return <main className={styles.main}>
+  return <> { report ? <main className={styles.main}>
     <section className={styles.report}>
       <Header />
       <h1>{report?.title}</h1>
@@ -55,6 +55,9 @@ export default function Dynamic_route () {
     <section className={styles.ads_two}>
       
     </section>
-  </main>
+  </main> :
+   <Loading />
+  }
+  </>
 }
   // dentro de figure, figcaption es opcional, buena idea usar figcaption para aclarar el porque de proteger la gente

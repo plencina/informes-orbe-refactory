@@ -54,6 +54,7 @@
     max-height: 25rem;
     min-width: 70%;
     max-width: 100%;
+    background: #ccc;
 }
 .genre {
     width: 100%;
@@ -71,18 +72,43 @@
     padding-top: 1rem;
     padding-bottom: 4rem;
     font-family: var(--regular);
-    font-size: 1.2rem;
+    font-size: 1.15rem;
+}
+.loading {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 1rem;
+    gap: 1rem;
+    margin-bottom: 4rem;
+}
+.loading_top {
+    height: 40%;
+    width: 100%;
+    background: #ccc;
+}
+.loading_bottom {
+    height: 100%;
+    width: 100%;
+    background: #ccc;
 }
 @media (max-width: 750px) {
     .main {
         grid-template-columns: 100%;
     }
+    .loading {
+        grid-column: 1;
+    }
     .report {
         grid-column: 1;
     }
+    .report figure figcaption {
+        text-align: center;
+    }
     .report h1 {
-        padding: 0 .5rem;
-        padding-top: 1rem;
+        padding: 1rem .5rem;
     }
     .ads_one {
         display: none;

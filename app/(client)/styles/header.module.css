@@ -25,6 +25,8 @@
     display: none;
 }
 .marquee {
+    width: 100%;
+    min-height: 1.5rem;
     background: var(--blue);
     color: var(--white);
     display: flex;

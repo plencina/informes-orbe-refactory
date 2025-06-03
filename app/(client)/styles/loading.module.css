@@ -1,6 +1,32 @@
-.main {
-    grid-column: 1/4;
+.loading_report {
+    height: 10rem;
+    border: solid 1px #ccc;
+    background: var(--white);
     display: flex;
-    justify-content: center;
-    align-items: center;
+    flex-direction: column;
+    padding: 1rem;
+    gap: 1rem;
+}
+.top {
+    width: 100%;
+    height: 8rem;
+    background: #ccc;
+} 
+.bottom {
+    height: 100%;
+    width: 100%;
+    background: #ccc;
+}
+
+@media (max-width: 750px) {
+    .loading_report {
+        flex-direction: row;
+        gap: .5rem;
+    }
+    .top {
+        width: 50%;
+    }
+    .bottom {
+        width: 100%;
+    }
 }
