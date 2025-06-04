@@ -14,10 +14,11 @@ export default function Dynamic_route () {
   const params = useParams()
   const report_id = params.id
 
-  const genres = ['Policiales', 'Judiciales', 'Destacados Policiales', 'Destacados Judiciales']
+  const genres = ['','Policiales','Judiciales','Destacado Policiales','Destacado Judiciales']
+  
   const get_report_by_cache = () => {
     const filtered_report = reports.filter(report => report._id == report_id)[0]
-    if (!report) return false
+    if (!filtered_report) return false
     set_report(filtered_report)
   }
   const get_report_by_request = async () => {
@@ -28,6 +29,7 @@ export default function Dynamic_route () {
   }
   useEffect(()=>{
     const result = get_report_by_cache()
+    console.log(result)
     if (!result) get_report_by_request()
   },[])
 

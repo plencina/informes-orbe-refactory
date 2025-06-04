@@ -20,20 +20,26 @@
 .main button {
     cursor: pointer;
 }
+
 .main:hover {
-    top: 0;
+    transform: translateY(5.55rem);
 }
+
 .button_sidebar {
     position: fixed;
     right: .5rem;
     top: .1rem;
     max-width: 2rem;
-    max-height: 2rem; 
+    max-height: 2rem;
+    display: none;
 }
 @media (max-width: 750px) {
     .main {
         width: 100%;
         left: 0;
+    }
+    .button_sidebar {
+        display: block;
     }
     .main:hover {
     }
