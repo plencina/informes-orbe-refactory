@@ -29,9 +29,17 @@ export default function Dynamic_route () {
   }
   useEffect(()=>{
     const result = get_report_by_cache()
-    console.log(result)
     if (!result) get_report_by_request()
   },[])
+
+  useEffect(()=>{
+    window.scroll({
+      top: 0,
+      left: 0,
+      behavior: 'smooth'
+    })
+    console.log('hubo cambio en report')
+  }, [report])
 
   return <> { report ? <main className={styles.main}>
     <section className={styles.report}>
