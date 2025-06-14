@@ -8,11 +8,11 @@
     animation: show 1s ease;
 }
 .report {
+    display: flex;
     height: 100%;
-    display: none;
     border: solid 1px #ccc; 
     transition: all .2s ease;
-    animation: show 1s ease;
+    animation: show 1s;
     background: var(--white);
 }
 .report:hover {
@@ -42,7 +42,7 @@
 .content h3 {
     font-family: var(--bold);
     font-size: 1.2rem;
-    line-height: 1.4rem;
+    line-height: 1.35rem;
     letter-spacing: .045rem;
     color: var(--blue);
 }

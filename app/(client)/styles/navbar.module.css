@@ -12,11 +12,8 @@
     z-index: 999;
     gap: 1rem;
 }
-.logo {
-    font-weight: bold;
-}
 @media (max-width: 1075px) {
     .desktop {
         display: none;
     }
-}
+} 

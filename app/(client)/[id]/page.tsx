@@ -3,13 +3,15 @@ import styles from "@/app/(client)/styles/dinamic_report.module.css";
 import { v4 as getRandomID } from 'uuid'
 import { useParams } from "next/navigation";
 import { useEffect, useState } from "react";
+import { SiWhatsapp } from "react-icons/si";
 import StoreClient from "@/app/stores/client";
 import ReportInterface from "@/app/interfaces/report";
 import Header from "@/app/(client)/header/header";
-import Loading from "@/app/(client)/[id]/loading"
+import Loading from "@/app/(client)/[id]/loading" 
 
 export default function Dynamic_route () {
   const [ report, set_report ] = useState<ReportInterface>()
+  const [ share_wsp, set_share_wsp ] = useState<string>()
   const { reports } = StoreClient()
   const params = useParams()
   const report_id = params.id
@@ -20,16 +22,20 @@ export default function Dynamic_route () {
     const filtered_report = reports.filter(report => report._id == report_id)[0]
     if (!filtered_report) return false
     set_report(filtered_report)
+    console.log('noticia obtenida desde cache')
   }
   const get_report_by_request = async () => {
     const response = await fetch(`api/read/by_id?id=${report_id}`)
     const result = await response.json()
     if (result.success) set_report(result.data)
+    console.log('noticia obtenida desde fetch')
     if (result.error) alert('Error obteniendo reporte')
   }
   useEffect(()=>{
-    const result = get_report_by_cache()
-    if (!result) get_report_by_request()
+    if (!report) {
+      const result = get_report_by_cache()
+      if (!result) get_report_by_request()
+    }
   },[])
 
   useEffect(()=>{
@@ -38,7 +44,13 @@ export default function Dynamic_route () {
       left: 0,
       behavior: 'smooth'
     })
-    console.log('hubo cambio en report')
+    if (report?.title) {
+      const url = window.location.href
+      const encoded_url = encodeURIComponent(url)
+      const encoded_title = encodeURIComponent(report?.title)
+      const full_link = `https://wa.me/?text=${encoded_title}%20${encoded_url}`;
+      set_share_wsp(full_link)
+    }
   }, [report])
 
   return <> { report ? <main className={styles.main}>
@@ -59,11 +71,13 @@ export default function Dynamic_route () {
       }
         <hr />
       </div>
+      <a className={styles.share_wsp} href={share_wsp}><SiWhatsapp /></a>
     </section>
+
+    
     <section className={styles.ads_one}>
     </section>
     <section className={styles.ads_two}>
-      
     </section>
   </main> :
    <Loading />

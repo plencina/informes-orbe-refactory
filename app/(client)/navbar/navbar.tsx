@@ -5,7 +5,7 @@ export default function Navbar () {
     return <nav className={styles.main}>
         <Link
         href={"/"}
-        ><h3 className={styles.logo}>Informes orbe</h3></Link>
+        ><h3>Informes Orbe</h3></Link>
         <p className={styles.desktop}>Policiales & Judiciales de Entre Ríos, desde 1970 periodismo profesional, Gualeguaychú</p>
     </nav>
 }
