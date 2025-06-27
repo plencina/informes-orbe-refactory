@@ -23,6 +23,7 @@ export default function Dynamic_route () {
     if (!filtered_report) return false
     set_report(filtered_report)
     console.log('noticia obtenida desde cache')
+    return true
   }
   const get_report_by_request = async () => {
     const response = await fetch(`api/read/by_id?id=${report_id}`)
@@ -74,7 +75,6 @@ export default function Dynamic_route () {
       <a className={styles.share_wsp} href={share_wsp}><SiWhatsapp /></a>
     </section>
 
-    
     <section className={styles.ads_one}>
     </section>
     <section className={styles.ads_two}>

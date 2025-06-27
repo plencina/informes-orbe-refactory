@@ -5,7 +5,7 @@ export default function Image () {
     const { image, set_image } = StoreConstructor()
 
     const upload_image = async (form: FormData) => {
-
+        console.log("cargando imágen...")
         const response = await fetch('api/upload_img',{
             headers: new Headers({ 
                 "Authorization": localStorage.getItem("jwt") || ''

@@ -5,7 +5,7 @@
     margin-left: 1rem;
     margin-right: 1rem;
     flex-direction: column;
-    background: #ccc;
+    color: white;
 }
 @media (max-width: 750px) {
     .main {

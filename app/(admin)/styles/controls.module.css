@@ -13,18 +13,14 @@
     border-bottom-right-radius: 5px;
     gap: .2rem;
     width: 15%;
-    border: solid 1px #aaa;
-    background: #ccc;
+    border: solid 1px #101010;
+    color: white;
+    background: black;
     transition: all .2s ease;
 }
-.main button {
-    cursor: pointer;
-}
-
 .main:hover {
     transform: translateY(5.55rem);
 }
-
 .button_sidebar {
     position: fixed;
     right: .5rem;

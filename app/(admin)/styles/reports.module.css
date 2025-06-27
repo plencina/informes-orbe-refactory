@@ -5,6 +5,10 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    color: white;
+}
+.main fieldset {
+    border: solid 1px #101010;
 }
 .title {
     width: 100%;

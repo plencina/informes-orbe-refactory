@@ -3,6 +3,8 @@
     flex-direction: column;
     justify-content: flex-start;
     align-items: center;
+    color: white;
+    background: black;
 }
 .title {
     width: 100%;
@@ -16,14 +18,27 @@
 .main fieldset {
     padding: 0 1rem .5rem 1rem;
     width: 100%;
+    border: none;
 }
 .main input {
     width: 100%;
+    color: white;
+    background: black;
+    border: solid 1px #101010;
 }
 .main textarea {
     min-height: 15rem;
     width: 100%;
     resize: vertical;
+    color: white;
+    background: black;
+    border: solid 1px #101010;
+}
+.main textarea:focus {
+    border: #101010; 
+}
+.main fieldset:nth-child(4) input {
+    cursor: pointer;
 }
 .main fieldset:last-of-type {
     display: flex;

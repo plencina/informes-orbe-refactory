@@ -12,3 +12,6 @@
     width: 100%;
     height: 1.5rem;
 }
+.main button:hover {
+    cursor: pointer;
+}

@@ -32,7 +32,7 @@ export default function Controls () {
         >III</button>
         <button onClick={view_upload}>Agregar noticia</button>
         <button onClick={view_reports}>Noticias subidas</button>
-        <button onClick={view_recycle}>Papelera de reciclaje</button>
+        <button onClick={view_recycle}>Papelera</button>
         <p><b>dashboard</b></p>
     </section>
 }
