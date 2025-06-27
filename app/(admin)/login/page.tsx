@@ -14,6 +14,7 @@ export default function Login () {
         })
         const result = await response.json()
         if (result.success) {
+            localStorage.clear()
             localStorage.setItem("jwt", result.token)
             router.push("/dashboard")
         }
